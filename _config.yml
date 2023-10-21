@@ -1,6 +1,6 @@
 # Configurasi Situs
-title: Nama Situs Anda
-description: Deskripsi singkat situs Anda
+title: Project
+description: Project yang pernah saya kerjakan
 baseurl: "/nama-sub-direktori-jekyll" # jika situs di-host di sub-direktori
 
 # Pengaturan Build & Serve
@@ -10,12 +10,12 @@ plugins:
   - jekyll-feed
 
 # Pengaturan URL
-url: "https://nama-user.github.io" # Ganti dengan URL repositori GitHub Anda
+url: "https://elxixau.github.io" # Ganti dengan URL repositori GitHub Anda
 
 # Pengaturan Autor
 author:
-  name: Nama Penulis
-  email: email@example.com
+  name: Indra Parlindungan Hutahaean
+  email: indra90078@gmail.com
 
 # Pengaturan Lainnya
 exclude:
