@@ -1,0 +1,29 @@
+# Configurasi Situs
+title: Nama Situs Anda
+description: Deskripsi singkat situs Anda
+baseurl: "/nama-sub-direktori-jekyll" # jika situs di-host di sub-direktori
+
+# Pengaturan Build & Serve
+markdown: kramdown
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+
+# Pengaturan URL
+url: "https://nama-user.github.io" # Ganti dengan URL repositori GitHub Anda
+
+# Pengaturan Autor
+author:
+  name: Nama Penulis
+  email: email@example.com
+
+# Pengaturan Lainnya
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - _site
+
+# Pengaturan Tambahan
+custom_setting: nilai_custom
