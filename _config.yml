@@ -10,7 +10,7 @@ plugins:
   - jekyll-feed
 
 # Pengaturan URL
-url: "https://elxixau.github.io" # Ganti dengan URL repositori GitHub Anda
+url: "https://github.com/Elxixau?tab=repositories" # Ganti dengan URL repositori GitHub Anda
 
 # Pengaturan Autor
 author:
