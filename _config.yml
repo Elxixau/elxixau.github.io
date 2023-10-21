@@ -24,6 +24,3 @@ exclude:
   - node_modules
   - vendor
   - _site
-
-# Pengaturan Tambahan
-custom_setting: nilai_custom
