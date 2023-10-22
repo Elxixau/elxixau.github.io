@@ -17,27 +17,39 @@
     }
     .desc h2{
       color: #4CAF50;
-      font-weight:800;
+      font-weight: 800;
     }
     .desc{
-      font-weight:400;
+      font-weight: 400;
     }
-    .container{
-      height:100vh;
+    .container {
+      height: 100vh;
     }
-    .col-md-4{
-      top: 30vh;
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+    .col-md-4 {
+      flex-basis: calc(33.33% - 10px);
+      margin-right: 10px;
     }
 
     @media (max-width: 770px) {
-      .col-md-4{
-        top: 15vh;
+      .row {
+        flex-direction: column;
+      }
+      .col-md-4 {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
       }
     }
 
     @media (max-width: 500px) {
-      .col-md-4{
-        top: 10vh;
+      .col-md-4 {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
       }
     }
   </style>
@@ -52,8 +64,8 @@
       <p class="text-muted">{{ projectDescription }}</p>
       <p class="text-white">{{ authorInfo }}</p>
     </div>
-    <div class="col-md-4">
-      <div class="card project-card mt-2" v-for="project in projects" :key="project.id">
+    <div class="col-md-4" v-for="project in projects" :key="project.id">
+      <div class="card project-card mt-2">
         <div class="card-body">
           <h5 class="card-title">{{ project.name }}</h5>
           <p class="card-text">{{ project.description }}</p>
