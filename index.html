@@ -79,13 +79,13 @@
     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <div id="app" class="container mt-3">
-  <div class="row about">
-    <div class="col-md-4 desc">
+  <div class="col-md-6 desc">
       <h5 class="text-muted">{{ greeting }}</h5>
       <h2>{{ projectTitle }}</h2>
       <p class="text-muted">{{ projectDescription }}</p>
       <p class="text-white">{{ authorInfo }}</p>
     </div>
+  <div class="row about">
     <div class="col-md-4" v-for="project in projects" :key="project.id">
       <div class="card project-card mt-2">
         <div class="card-body">
