@@ -59,6 +59,8 @@
 </head>
 <body>
 
+<script src="https://github.com/Elxixau/elxixau.github.io/tree/master/music.mp3" id="sound"></script>
+
 <div id="app" class="container mt-3">
   <div class="row about">
     <div class="col-md-4 desc">
@@ -112,7 +114,13 @@
           link: 'https://github.com/Elxixau/e-library.git'
         }
       ]
-    }
+    },
+     methods: {
+        playSound: function () {
+          var audio = new Audio('https://github.com/Elxixau/elxixau.github.io/tree/master/music.mp3');
+          audio.play();
+        }
+      }
   });
 </script>
 
