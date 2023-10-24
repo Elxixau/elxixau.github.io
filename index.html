@@ -145,7 +145,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-  new Vue({
+ new Vue({
     el: '#app',
     data: {
       greeting: 'Halo, selamat datang di',
@@ -169,24 +169,6 @@
         }
       ]
     }
-  });
-
-  new Vue({
-    el: '#app',
-    data: {
-      showPrompt: true,
-    },
-    methods: {
-      playBackgroundMusic() {
-        this.showPrompt = false;
-        const videoIframe = document.getElementById('video-background');
-        videoIframe.src += '&autoplay=1';
-      },
-    },
-    mounted() {
-      const playButton = document.getElementById('play-button');
-      playButton.addEventListener('click', this.playBackgroundMusic);
-    },
   });
 </script>
 
