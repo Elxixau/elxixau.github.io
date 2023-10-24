@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Showcase</title>
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-   <style>
+
+  <style>
     body {
       background-color: #000;
-      color: #fff;      margin: 0;
+      color: #fff;
+      margin: 0;
       overflow: hidden;
     }
 
@@ -19,6 +23,7 @@
     }
 
     iframe {
+      display: none; /* Hide the iframe initially */
       position: fixed;
       top: 0;
       left: 0;
@@ -31,30 +36,36 @@
       background-color: #4CAF50;
       color: #fff;
     }
-    .desc h2{
+
+    .desc h2 {
       color: #4CAF50;
       font-weight: 800;
     }
-    .desc{
+
+    .desc {
       font-weight: 400;
     }
+
     .container {
       height: 100vh;
     }
+
     .row {
       display: flex;
       justify-content: space-between;
     }
+
     .col-md-4 {
       flex-basis: calc(33.33% - 10px);
       margin-right: 10px;
-      top: 60vh;
+      top: 30vh;
     }
 
     @media (max-width: 770px) {
       .row {
         flex-direction: column;
       }
+
       .col-md-4 {
         flex-basis: 100%;
         margin-right: 0;
@@ -73,78 +84,79 @@
     }
   </style>
 </head>
+
 <body>
+
   <button id="playButton" class="btn btn-primary">Play Video</button>
-    <iframe id="videoIframe" width="100%" height="100%"
+
+  <iframe id="videoIframe" width="100%" height="100%"
     src="https://www.youtube.com/embed/xgSf67Khryk?controls=0&showinfo=0&autohide=1&loop=1"
     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  
 
-<div id="app" class="container mt-3">
-  <div class="row about">
-     <div class="col-md-4 desc">
-      <h5 class="text-muted">{{ greeting }}</h5>
-      <h2>{{ projectTitle }}</h2>
-      <p class="text-muted">{{ projectDescription }}</p>
-      <p class="text-white">{{ authorInfo }}</p>
-    </div>
-    <div class="col-md-4" v-for="project in projects" :key="project.id">
-      <div class="card project-card mt-2">
-        <div class="card-body">
-          <h5 class="card-title">{{ project.name }}</h5>
-          <p class="card-text">{{ project.description }}</p>
-          <h6 class="text-muted">{{ project.technology }}</h6>
-          <a :href="project.link" class="btn btn-secondary">Detail Proyek</a>
+  <div id="app" class="container mt-3">
+    <div class="row about">
+      <div class="col-md-4 desc">
+        <h5 class="text-muted">{{ greeting }}</h5>
+        <h2>{{ projectTitle }}</h2>
+        <p class="text-muted">{{ projectDescription }}</p>
+        <p class="text-white">{{ authorInfo }}</p>
+      </div>
+      <div class="col-md-4" v-for="project in projects" :key="project.id">
+        <div class="card project-card mt-2">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.name }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            <h6 class="text-muted">{{ project.technology }}</h6>
+            <a :href="project.link" class="btn btn-secondary">Detail Proyek</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Vue.js -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!-- Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
-<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-   document.getElementById('playButton').addEventListener('click', function () {
+  <script>
+    document.getElementById('playButton').addEventListener('click', function () {
       var iframe = document.getElementById('videoIframe');
       iframe.style.display = 'block';
       iframe.src += "&autoplay=1"; // Append autoplay parameter to start playing
       this.style.display = 'none'; // Hide the play button after clicking
     });
-  
-  new Vue({
-    el: '#app',
-    data: {
-      greeting: 'Halo, selamat datang di',
-      projectTitle: 'Elxixau Project Archive',
-      projectDescription: 'Berikut sekumpulan plot twist dari diri saya yang tidak kalian ketahui.',
-      authorInfo: 'Indra Parlindungan | Web Developer',
-      projects: [
-        {
-          id: 1,
-          name: 'Amazing Grace',
-          description: 'Booking tiket online konser rohani tanpa metode pembayaran',
-          technology: 'Laravel',
-          link: 'https://github.com/Elxixau/e-ticket_amazing_grace.git'
-        },
-        {
-          id: 2,
-          name: 'E-Library SMPN 2 Samarinda',
-          description: 'Perpustakan digital penyedia media baca online',
-          technology: 'Laravel',
-          link: 'https://github.com/Elxixau/e-library.git'
-        }
-      ]
-    }
+
+    new Vue({
+      el: '#app',
+      data: {
+        greeting: 'Halo, selamat datang di',
+        projectTitle: 'Elxixau Project Archive',
+        projectDescription: 'Berikut sekumpulan plot twist dari diri saya yang tidak kalian ketahui.',
+        authorInfo: 'Indra Parlindungan | Web Developer',
+        projects: [{
+            id: 1,
+            name: 'Amazing Grace',
+            description: 'Booking tiket online konser rohani tanpa metode pembayaran',
+            technology: 'Laravel',
+            link: 'https://github.com/Elxixau/e-ticket_amazing_grace.git'
+          },
+          {
+            id: 2,
+            name: 'E-Library SMPN 2 Samarinda',
+            description: 'Perpustakan digital penyedia media baca online',
+            technology: 'Laravel',
+            link: 'https://github.com/Elxixau/e-library.git'
+          }
+        ]
+      }
     });
-</script>
+  </script>
 
 </body>
+
 </html>
 
-berikan playsound dengan javascript
