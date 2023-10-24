@@ -153,6 +153,7 @@
       projectTitle: 'Elxixau Project Archive',
       projectDescription: 'Berikut sekumpulan plot twist dari diri saya yang tidak kalian ketahui.',
       authorInfo: 'Indra Parlindungan | Web Developer',
+      showPrompt: true,
       projects: [
         {
           id: 1,
@@ -169,7 +170,18 @@
           link: 'https://github.com/Elxixau/e-library.git'
         }
       ]
-    }
+    },
+    methods: {
+      playBackgroundMusic() {
+        this.showPrompt = false;
+        const videoIframe = document.getElementById('video-background');
+        videoIframe.src += '&autoplay=1';
+      },
+    },
+    mounted() {
+      const playButton = document.getElementById('play-button');
+      playButton.addEventListener('click', this.playBackgroundMusic);
+    },
   });
 </script>
 
