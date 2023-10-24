@@ -85,9 +85,9 @@
 <body>
 
   <div id="video-container">
-  <iframe id="video-background" src="https://www.youtube.com/embed/xgSf67Khryk?autoplay=1&loop=1&controls=0" frameborder="0" allowfullscreen allow="autoplay"></iframe>
-</div>
-</div>
+    <iframe id="video-background" src="https://www.youtube.com/embed/xgSf67Khryk?autoplay=0&loop=1&controls=0" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+    <button id="play-button" onclick="playVideo()">Play Music</button>
+  </div>
 
 <div id="app" class="container mt-3">
   <div class="row about">
@@ -144,6 +144,12 @@
       ]
     }
   });
+
+  function playVideo() {
+    var video = document.getElementById('video-background');
+    video.src = 'https://www.youtube.com/embed/xgSf67Khryk?autoplay=1&loop=1&controls=0';
+    document.getElementById('play-button').style.display = 'none';
+  }
 </script>
 
 </body>
