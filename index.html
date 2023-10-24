@@ -36,21 +36,6 @@
       position: relative;
       z-index: 1; /* Place your content above the video */
     }
-
-    #play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      padding: 10px 20px;
-      cursor: pointer;
-      border: none;
-      font-size: 16px;
-      color: #333;
-      border-radius: 5px;
-      outline: none;
-    }
     
     .project-card {
       background-color: #4CAF50;
@@ -99,11 +84,25 @@
   </style>
 </head>
 <body>
-
-  <div id="video-container">
-    <iframe id="video-background" src="https://www.youtube.com/embed/xgSf67Khryk?autoplay=0&loop=1&controls=0" frameborder="0" allowfullscreen allow="autoplay"></iframe>
-    <button id="play-button" onclick="playVideo()">Play Music</button>
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <iframe src="https://www.youtube.com/embed/xgSf67Khryk?autoplay=1&loop=1&controls=0" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+      </div>
+    </div>
   </div>
+</div>
+
+<div id="video-container">
+  <div class="overlay" data-toggle="modal" data-target="#videoModal"></div>
+  <!-- The overlay triggers the modal when clicked -->
+  <video id="video-background" src="your-audio-file.mp3" loop muted></video>
+</div>
 
 <div id="app" class="container mt-3">
   <div class="row about">
